@@ -305,7 +305,7 @@ function render(t){
   for(const p of parts){ctx.globalAlpha=Math.max(0,1-p.t/p.life);ctx.fillStyle=p.col;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}
   ctx.globalAlpha=1;
   ctx.textAlign='center';ctx.textBaseline='middle';
-  for(const f of floats){ctx.globalAlpha=Math.max(0,1-f.t);const big=f.txt.startsWith('كومبو');ctx.font=(big?'800 46px':'700 30px')+' Tajawal';ctx.fillStyle=f.col;ctx.fillText(f.txt,f.x,f.y)}
+  for(const f of floats){ctx.globalAlpha=Math.max(0,1-f.t);const big=f.txt.startsWith('كومبو');ctx.direction=big?'rtl':'ltr';ctx.font=(big?'800 46px':'700 30px')+' Tajawal';ctx.fillStyle=f.col;ctx.fillText(f.txt,f.x,f.y)}
   ctx.globalAlpha=1;ctx.restore();
   if(flash>0){ctx.fillStyle='rgba(239,100,126,'+(flash*.18)+')';ctx.fillRect(0,0,W,H)}
   hud();
